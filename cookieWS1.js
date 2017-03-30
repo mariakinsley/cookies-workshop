@@ -78,3 +78,14 @@ chocolateBtn.addEventListener('click', function(e){
   sugar = 0;
   chocolate = 0;
 });
+
+const mouse$ = Rx.Observable
+  .fromEvent(document, 'mousemove')
+  .map(({ x, y }) => {
+    x = parseInt((x / $(document).width() * 50) - 35);
+    y = parseInt((y / $(document).height() * 50) - 35);
+return { x, y }});
+
+const style$ = RxCSS({
+  mouse: mouse$,
+});

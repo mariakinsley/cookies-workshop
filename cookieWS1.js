@@ -11,7 +11,7 @@ var sugar;
 var chocolate;
 
 window.onload = function() {
-    if (Cookies.get("lemon") === undefined){
+    if (Cookies.get("lemon") === undefined) {
         lemon1 = 0;
         Cookies.set("lemon", 0);
         lemonP.innerHTML = Cookies.get("lemon");
@@ -78,20 +78,20 @@ resetB.addEventListener('click', function() {
     chocolate = 0;
 });
 
-const mouse$ = Rx.Observable
-    .fromEvent(document, 'mousemove');
-    .map(({
-        x,
-        y
-    }) => {
-        x = parseInt((x / $(document).width() * 50) - 35);
-        y = parseInt((y / $(document).height() * 50) - 35);
-        return {
-            x,
-            y
-        }
-    });
-
-const style$ = RxCSS({
-    mouse: mouse$,
-});
+// const mouse$ = Rx.Observable
+//     .fromEvent(document, 'mousemove');
+// .map(({
+//     x,
+//     y
+// }) => {
+//     x = parseInt((x / $(document).width() * 50) - 35);
+//     y = parseInt((y / $(document).height() * 50) - 35);
+//     return {
+//         x,
+//         y
+//     }
+// });
+//
+// const style$ = RxCSS({
+//     mouse: mouse$,
+// });
